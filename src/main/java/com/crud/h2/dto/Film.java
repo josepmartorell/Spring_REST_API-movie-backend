@@ -28,14 +28,14 @@ public class Film {
 	private int qualification;
 	
 	@OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="code")
     private List<Room> room;
 
 	/**
 	 * void constructor
 	 */
 	public Film() {
-		super();
+		//super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -44,11 +44,12 @@ public class Film {
 	 * @param name
 	 * @param film
 	 */
-	public Film(int code, String name, int qualification) {
-		super();
+	public Film(int code, String name, int qualification, List<Room> room) {
+		//super();
 		this.code = code;
 		this.name = name;
 		this.qualification = qualification;
+		this.room = room;
 	}
 
 	/**
@@ -97,7 +98,7 @@ public class Film {
 	 * @return the room
 	 */
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Room")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "film")
 	public List<Room> getRoom() {
 		return room;
 	}
@@ -111,7 +112,7 @@ public class Film {
 
 	@Override
 	public String toString() {
-		return "Film [code=" + code + ", name=" + name + ", qualification=" + qualification + "]";
+		return "Film [code=" + code + ", name=" + name + ", qualification=" + qualification + ", room=" + room + "]";
 	}
 	
 	

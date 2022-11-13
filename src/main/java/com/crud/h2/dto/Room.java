@@ -27,7 +27,7 @@ public class Room {
 	 * void constructor
 	 */
 	public Room() {
-		super();
+		//super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -37,7 +37,7 @@ public class Room {
 	 * @param film
 	 */
 	public Room(int id, String name, Film film) {
-		super();
+		//super();
 		this.id = id;
 		this.name = name;
 		this.film = film;

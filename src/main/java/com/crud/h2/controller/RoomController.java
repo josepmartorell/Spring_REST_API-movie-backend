@@ -40,7 +40,7 @@ public class RoomController {
 		return room_xid;		
 	}
 	
-	@PutMapping
+	@PutMapping("/rooms/{id}")
 	public Room updateRoom(@PathVariable(name="id")int id ,@RequestBody Room room) {
 		Room selected_room = new Room();
 		Room updated_room = new Room();
@@ -51,7 +51,7 @@ public class RoomController {
 		return updated_room;		
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/rooms/{id}")
 	public void eliminateRoom(@PathVariable(name="id")int id) {
 		roomServiceImpl.eliminateRoom(id);
 	}
